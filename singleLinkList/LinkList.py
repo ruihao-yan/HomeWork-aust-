@@ -17,6 +17,12 @@ class LinkList():
     def addList(self, val : str):
         self.sentinel.next = self.Node(val, self.sentinel.next)
         self._size += 1
+
+    def pop(self):
+        tmp = self.sentinel.next.val
+        self._size -= 1
+        self.sentinel.next = self.sentinel.next.next
+        return tmp
     
     def addListInend(self, val):
         def aux(linklist):
@@ -48,6 +54,7 @@ class LinkList():
     #search linklist and return the smallest location
     def search(self, val : str):
         def aux(linklist):
+            
             assert(linklist is not None), 'Invalid size'
             if linklist.val == val:
                 return 0
