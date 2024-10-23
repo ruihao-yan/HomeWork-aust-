@@ -1,5 +1,7 @@
 import unittest
 
+# time complexity is O(N)
+# space complexity is O(N)
 def matchBrack(ned : str):
     if ned is None:
         return True
